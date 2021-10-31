@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="slider">
+      <input class="slider" type="range" id="fader" min="300" max="2000" value="0" step="1" oninput="outputUpdate(value)">
+      <input type="range" id="fade" min="2021" max="2030" value="0" step="1" oninput="outputUpdat(value)">
+      <br>
+      <output for="fader" id="volume">0</output>
+      <output for="fade" id="volum">0</output>
+  	</div>
+    <style>
+      .slider {
+        position: relative;
+	background: black;
+	border-radius: 8px;
+	width: 500px;
+	height: 25px;
+  }
+  #fader::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 30px;
+	height: 20px;
+	border-radius: 50%;
+	background: white;
+	box-shadow: 0 0 2px #222;
+}
+#fader {
+	position: relative;
+	left: 3px;
+	width: 490px;
+	height: 20px;
+	background: black;
+	-webkit-appearance: none;
+	outline: none;
+	border-radius: 4px;
+}
+    </style>
+  </body>
+  <script type="text/javascript">
+  		function outputUpdate(vol) {
+  			var output = document.querySelector('#volume');
+  			output.value = vol;
+        output.style.left = vol - 20 + "px";
+      }
+      function outputUpdat(vol) {
+        var output = document.querySelector('#volum');
+        output.value = vol;
+        output.style.left = vol - 20 + "px";
+      }
+  	</script>
+
+</html>
